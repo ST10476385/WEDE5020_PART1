@@ -51,7 +51,8 @@ Baked by Ruth is a tribute website for a beloved community baker. The website sh
 
 
 ### Products Page
-![Screenshot_26-8-2025_185013_](https://github.com/user-attachments/assets/7e624bbe-8dbd-4d69-a0d7-880590ebe28c)
+![Screenshot_26-8-2025_194519_](https://github.com/user-attachments/assets/ceaed142-ce80-424c-8efa-cfca586a5850)
+
 
 
 ### Courses Page
