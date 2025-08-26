@@ -1,0 +1,364 @@
+<!--
+  events.html
+  Community events page for Baked by Ruth.
+  Lists upcoming events, fundraisers, and workshops.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata for SEO, social sharing, and responsive design.
+    Links to the main stylesheet and JavaScript file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="See our upcoming community events, fundraisers, and workshops. Join us and be part of Ruth's legacy.">
+  <meta name="keywords" content="Events, Community, Fundraiser, Workshops, Baking, Polokwane, South Africa">
+  <meta name="author" content="Khanyisa Shikwambana">
+  <meta property="og:title" content="Events | Baked by Ruth">
+  <meta property="og:description" content="See our upcoming community events, fundraisers, and workshops. Join us and be part of Ruth's legacy.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-placeholder.jpg">
+  <meta property="og:url" content="https://bakedbyruth.co.za/events.html">
+  <title>Events | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding, navigation links, hamburger menu for mobile, and dark mode toggle.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <!-- Navigation with hamburger menu and dark mode toggle -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+  <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+  <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+  <span class="subtitle">A Legacy of Love</span>
+      </div>
+      <!-- Hamburger menu button for mobile -->
+      <button id="menu-btn" aria-label="Open navigation menu" style="display:none;background:none;border:none;font-size:2rem;cursor:pointer;">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Dark mode toggle button -->
+      <button id="dark-toggle" aria-label="Toggle dark mode" style="margin-left:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">🌙</button>
+    </div>
+  </nav>
+
+  <!--
+    Hero Section: Large orange header introducing the Events page.
+    Includes a headline, subheading, and brief description.
+  -->
+  <header class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text">
+        <h2>Community Events</h2>
+        <h3>Building Stronger Communities</h3>
+        <p>Join us for celebrations, fundraisers, and gatherings that honor Ruth's spirit of bringing people together through food and love.</p>
+      </div>
+      <div class="hero-img" style="display:none;"></div>
+    </div>
+  </header>
+
+  <!--
+    Scroll to Top Button: Appears when user scrolls down, lets users quickly return to the top of the page.
+    Controlled by JavaScript in main.js.
+  -->
+  <button id="scroll-top-btn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;background:#b45309;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">↑</button>
+  <main class="main-content">
+    <!--
+      Main Content: Contains all event sections, including upcoming events and details.
+      Uses a centered container for layout.
+    -->
+    <div class="container" style="max-width:1100px;">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <h1 style="font-size:2.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Community Events</h1>
+        <p style="font-size:1.25rem;color:#78350f;max-width:600px;margin:0 auto;">Building stronger communities one event at a time. Join us for celebrations, fundraisers, and gatherings that honor Ruth's spirit of bringing people together through food and love.</p>
+      </div>
+
+      <!--
+        Upcoming Events Section: Highlights featured and upcoming events with images, descriptions, and details.
+        Uses a grid layout for event cards.
+      -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:2rem;">Upcoming Events</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem;">
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+            <img src="images/Shangaan dance + attire.jpeg"Community bake sale and fundraiser event" style="width:100%;height:200px;object-fit:cover;">
+            <div style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;margin-bottom:0.75rem;">
+                <span style="background:#b45309;color:#fff;padding:0.25rem 0.75rem;border-radius:999px;font-size:0.95rem;font-weight:500;margin-right:0.75rem;">Fundraiser</span>
+                <span style="color:#666;">February 15, 2025</span>
+              </div>
+              <h3 style="font-size:1.3rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Ruth's Legacy Bake Sale</h3>
+              <p style="color:#666;margin-bottom:1rem;">Join us for our biggest fundraising event of the year! All proceeds go towards youth entrepreneurship programs and skills training initiatives.</p>
+              <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                <p>📍 Main Bakery & Heritage Primary School</p>
+                <p>🕒 8:00 AM - 4:00 PM</p>
+                <p>🎯 Goal: Raise R50,000 for youth programs</p>
+              </div>
+              <a href="event-register.html" class="btn btn-primary" style="background:#16a34a;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;text-decoration:none;">Register Now</a>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+            <img src="images/6225dac5-7add-4fdd-9016-e29398b04150.jpeg" alt="Free community baking workshop for families" style="width:100%;height:200px;object-fit:cover;">
+            <div style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;margin-bottom:0.75rem;">
+                <span style="background:#16a34a;color:#fff;padding:0.25rem 0.75rem;border-radius:999px;font-size:0.95rem;font-weight:500;margin-right:0.75rem;">Free Workshop</span>
+                <span style="color:#666;">February 22, 2025</span>
+              </div>
+              <h3 style="font-size:1.3rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Family Baking Day</h3>
+              <p style="color:#666;margin-bottom:1rem;">Free baking workshop for families! Learn to make traditional fat cakes and scones together. Perfect for bonding while learning new skills.</p>
+              <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                <p>📍 Main Bakery Teaching Kitchen</p>
+                <p>🕒 10:00 AM - 2:00 PM</p>
+                <p>👨‍👩‍👧‍👦 Registration required (limit 15 families)</p>
+              </div>
+              <a href="event-register.html" class="btn btn-primary" style="background:#16a34a;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;text-decoration:none;">Register Now</a>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+            <img src="images/f4802022-f367-4df3-baa0-5b80b8c504a1.jpeg" alt="Young entrepreneurs showcasing their baking businesses" style="width:100%;height:200px;object-fit:cover;">
+            <div style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;margin-bottom:0.75rem;">
+                <span style="background:#2563eb;color:#fff;padding:0.25rem 0.75rem;border-radius:999px;font-size:0.95rem;font-weight:500;margin-right:0.75rem;">Business Showcase</span>
+                <span style="color:#666;">March 8, 2025</span>
+              </div>
+              <h3 style="font-size:1.3rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Young Entrepreneurs Fair</h3>
+              <p style="color:#666;margin-bottom:1rem;">Celebrating our course graduates! Come support young entrepreneurs showcasing their baking businesses and sample their amazing creations.</p>
+              <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                <p>📍 Mall of the North - Central Court</p>
+                <p>🕒 9:00 AM - 5:00 PM</p>
+                <p>🎪 20+ young businesses participating</p>
+              </div>
+              <a href="event-register.html" class="btn btn-primary" style="background:#16a34a;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;text-decoration:none;">Register Now</a>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+            <img src="images/Easter egg hunts just got a BIG upgrade! 🐰🥚….jpeg" alt="Easter special baking celebration with traditional treats" style="width:100%;height:200px;object-fit:cover;">
+            <div style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;margin-bottom:0.75rem;">
+                <span style="background:#a21caf;color:#fff;padding:0.25rem 0.75rem;border-radius:999px;font-size:0.95rem;font-weight:500;margin-right:0.75rem;">Celebration</span>
+                <span style="color:#666;">March 29, 2025</span>
+              </div>
+              <h3 style="font-size:1.3rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Easter Baking Celebration</h3>
+              <p style="color:#666;margin-bottom:1rem;">Join us for a special Easter celebration featuring traditional hot cross buns, Easter cookies, and community egg hunt activities for children.</p>
+              <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                <p>📍 Main Bakery & Heritage Street Park</p>
+                <p>🕒 11:00 AM - 3:00 PM</p>
+                <p>🐰 Family-friendly activities included</p>
+              </div>
+              <a href="event-register.html" class="btn btn-primary" style="background:#16a34a;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;text-decoration:none;">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Categories -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Types of Events We Host</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;">
+          <div style="text-align:center;background:#fff7e6;padding:2rem;border-radius:1rem;">
+            <div style="background:#b45309;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;font-size:2rem;color:#fff;">🎁</div>
+            <h3 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Fundraising Events</h3>
+            <p style="color:#78350f;">Bake sales, charity dinners, and community drives to support our youth programs and community initiatives.</p>
+          </div>
+          <div style="text-align:center;background:#fee2e2;padding:2rem;border-radius:1rem;">
+            <div style="background:#b45309;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;font-size:2rem;color:#fff;">🎓</div>
+            <h3 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Educational Workshops</h3>
+            <p style="color:#78350f;">Free baking classes, skill-sharing sessions, and hands-on learning experiences for all ages.</p>
+          </div>
+          <div style="text-align:center;background:#ffedd5;padding:2rem;border-radius:1rem;">
+            <div style="background:#b45309;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;font-size:2rem;color:#fff;">🏪</div>
+            <h3 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Business Showcases</h3>
+            <p style="color:#78350f;">Platforms for our course graduates to display their businesses and connect with customers and mentors.</p>
+          </div>
+          <div style="text-align:center;background:#fee2e2;padding:2rem;border-radius:1rem;">
+            <div style="background:#b45309;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;font-size:2rem;color:#fff;">🎉</div>
+            <h3 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Community Celebrations</h3>
+            <p style="color:#78350f;">Seasonal festivities, cultural celebrations, and special occasions that bring our community together.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Past Events Gallery -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Recent Event Highlights</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+          <div style="position:relative;overflow:hidden;border-radius:1rem;">
+            <img src="images/That's a Wrap! Cake Workshop_ Funfetti.jpeg" alt="Christmas charity bake sale with community volunteers" style="width:100%;height:220px;object-fit:cover;border-radius:1rem;">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);border-radius:1rem;opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;color:#fff;padding:1rem;">
+                <h4 style="font-weight:600;margin-bottom:0.5rem;">Christmas Charity Bake Sale</h4>
+                <p style="font-size:0.98rem;">Raised R32,000 for local families</p>
+              </div>
+            </div>
+          </div>
+          <div style="position:relative;overflow:hidden;border-radius:1rem;">
+            <img src="images/68fd8a38-4243-4936-9502-d4f551c58736.jpeg" alt="Youth graduation ceremony for entrepreneurship program" style="width:100%;height:220px;object-fit:cover;border-radius:1rem;">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);border-radius:1rem;opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;color:#fff;padding:1rem;">
+                <h4 style="font-weight:600;margin-bottom:0.5rem;">Youth Program Graduation</h4>
+                <p style="font-size:0.98rem;">25 young entrepreneurs certified</p>
+              </div>
+            </div>
+          </div>
+          <div style="position:relative;overflow:hidden;border-radius:1rem;">
+            <img src="images/c6a07cdb-d93b-471a-b3e6-5daec5a85aa6.jpeg" alt="Community Heritage Day celebration with traditional food" style="width:100%;height:220px;object-fit:cover;border-radius:1rem;">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);border-radius:1rem;opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;color:#fff;padding:1rem;">
+                <h4 style="font-weight:600;margin-bottom:0.5rem;">Heritage Day Celebration</h4>
+                <p style="font-size:0.98rem;">500+ community members attended</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Get Involved -->
+      <section style="margin-bottom:3rem;">
+        <div style="background:linear-gradient(90deg,#fef3c7 0%,#fee2e2 100%);padding:2rem;border-radius:1rem;">
+          <h2 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Get Involved</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;">
+            <div style="text-align:center;">
+              <h3 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Volunteer</h3>
+              <p style="color:#78350f;margin-bottom:1rem;">Help us organize and run events. From setup to cleanup, every helping hand makes a difference.</p>
+              <a href="get-involved.html" class="btn btn-primary" style="background:#b45309;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;text-decoration:none;">Volunteer Info</a>
+            </div>
+            <div style="text-align:center;">
+              <h3 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Sponsor</h3>
+              <p style="color:#78350f;margin-bottom:1rem;">Support our events as a sponsor and help us reach more people while promoting your business.</p>
+              <a href="get-involved.html" class="btn btn-primary" style="background:#b45309;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;text-decoration:none;">Sponsorship Packages</a>
+            </div>
+            <div style="text-align:center;">
+              <h3 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Attend</h3>
+              <p style="color:#78350f;margin-bottom:1rem;">Join our events, bring your family and friends, and be part of our growing community family.</p>
+              <a href="get-involved.html" class="btn btn-primary" style="background:#b45309;color:#fff;padding:0.5rem 1.5rem;border-radius:0.5rem;text-decoration:none;">Event Calendar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Detailed Info: Volunteers, Sponsors, Event Calendar -->
+        <div style="margin-top:2.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+          <div style="background:#fff7e6;padding:1.5rem 1.5rem 1.5rem 1.5rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">Volunteer Opportunities</h3>
+            <ul style="color:#78350f;font-size:1rem;line-height:1.7;margin-bottom:0.5rem;padding-left:1.2em;">
+              <li>Event setup, registration, and guest assistance</li>
+              <li>Food prep, serving, and cleanup</li>
+              <li>Kids’ activities and workshop support</li>
+              <li>Social media, photography, and event promotion</li>
+            </ul>
+            <p style="margin-bottom:0.5rem;">All volunteers receive a certificate of appreciation and a special treat from our bakery!</p>
+            <a href="volunteer.html" style="color:#b45309;text-decoration:underline;font-weight:600;">Sign up to volunteer &rarr;</a>
+          </div>
+          <div style="background:#fee2e2;padding:1.5rem 1.5rem 1.5rem 1.5rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">Sponsorship Packages</h3>
+            <ul style="color:#78350f;font-size:1rem;line-height:1.7;margin-bottom:0.5rem;padding-left:1.2em;">
+              <li>Bronze: R2,500 – Logo on event banners & social media</li>
+              <li>Silver: R5,000 – All Bronze benefits + stall at event</li>
+              <li>Gold: R10,000+ – All Silver benefits + featured in press & event speech</li>
+            </ul>
+            <p style="margin-bottom:0.5rem;">Custom packages available for businesses and individuals. All sponsors are recognized on our website and at events.</p>
+            <a href="sponsor.html" style="color:#b45309;text-decoration:underline;font-weight:600;">Become a sponsor &rarr;</a>
+          </div>
+          <div style="background:#ffedd5;padding:1.5rem 1.5rem 1.5rem 1.5rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;">Event Calendar</h3>
+            <ul style="color:#78350f;font-size:1rem;line-height:1.7;margin-bottom:0.5rem;padding-left:1.2em;">
+              <li>Feb 15: Ruth's Legacy Bake Sale (Fundraiser)</li>
+              <li>Feb 22: Family Baking Day (Free Workshop)</li>
+              <li>Mar 8: Young Entrepreneurs Fair (Showcase)</li>
+              <li>Mar 29: Easter Baking Celebration (Community)</li>
+            </ul>
+            <p style="margin-bottom:0.5rem;">See full details and register for upcoming events on our <a href="enquiry.html?type=event" style="color:#b45309;text-decoration:underline;">Enquiry page</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Newsletter Signup -->
+      <section>
+        <div style="background:#fff;padding:2rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);max-width:600px;margin:0 auto;text-align:center;">
+          <h3 style="font-size:1.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Stay Updated on Our Events</h3>
+          <p style="color:#78350f;margin-bottom:1.5rem;">Subscribe to our newsletter to be the first to know about upcoming events, volunteer opportunities, and community celebrations.</p>
+          <form id="newsletter-form" style="display:flex;flex-direction:column;gap:1rem;align-items:center;max-width:400px;margin:0 auto;">
+            <input id="newsletter-email" type="email" placeholder="Enter your email address" style="flex:1;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;outline:none;">
+            <button type="submit" style="background:#b45309;color:#fff;padding:0.75rem 2rem;border-radius:0.5rem;font-size:1rem;font-weight:600;cursor:pointer;">Subscribe</button>
+          </form>
+          <div id="newsletter-success" style="display:none;margin-top:1rem;background:#d1fae5;color:#065f46;padding:1rem 1.5rem;border-radius:0.5rem;font-weight:600;"></div>
+        </div>
+<script>
+  // Newsletter form notification (custom validation, suppress browser default)
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('newsletter-form');
+    var notif = document.getElementById('newsletter-success');
+    var emailInput = document.getElementById('newsletter-email');
+    if(form && notif && emailInput) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = emailInput.value.trim();
+        // Simple email validation regex
+        var emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!email) {
+          notif.textContent = 'Please enter your email address.';
+          notif.style.background = '#fee2e2';
+          notif.style.color = '#b91c1c';
+          notif.style.display = 'block';
+          setTimeout(function(){ notif.style.display = 'none'; }, 4000);
+          return;
+        } else if (!emailValid) {
+          notif.textContent = 'Please enter a valid email address.';
+          notif.style.background = '#fee2e2';
+          notif.style.color = '#b91c1c';
+          notif.style.display = 'block';
+          setTimeout(function(){ notif.style.display = 'none'; }, 4000);
+          return;
+        }
+        notif.textContent = 'Thank you for subscribing! You will now receive updates on our events.';
+        notif.style.background = '#d1fae5';
+        notif.style.color = '#065f46';
+        notif.style.display = 'block';
+        form.reset();
+        setTimeout(function(){ notif.style.display = 'none'; }, 4000);
+      });
+    }
+  });
+</script>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <h3>Baked by Ruth</h3>
+        <p>Preserving Ruth's legacy through traditional baking with love and care.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: +27 123 456 789<br>Email: hello@bakedbyruth.co.za<br>Open: Mon-Sat 6AM-6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Baked by Ruth. All rights reserved. In loving memory of Ruth.</p>
+    </div>
+  </footer>
+</body>
+</html>

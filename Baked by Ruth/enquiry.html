@@ -1,0 +1,250 @@
+<!--
+  enquiry.html
+  Enquiry page for Baked by Ruth.
+  Lets users place product, cake, course, or event enquiries.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata for SEO, social sharing, and responsive design.
+    Links to the main stylesheet and JavaScript file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Place an enquiry for products, custom cakes, courses, or events. We'll respond within 24 hours.">
+  <meta name="keywords" content="Enquiry, Order, Contact, Custom Cake, Bulk Order, Baking, Polokwane">
+  <meta name="author" content="Khanyisa Shikwambana">
+  <meta property="og:title" content="Enquiry | Baked by Ruth">
+  <meta property="og:description" content="Place an enquiry for products, custom cakes, courses, or events. We'll respond within 24 hours.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-placeholder.jpg">
+  <meta property="og:url" content="https://bakedbyruth.co.za/enquiry.html">
+  <title>Enquiry | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding, navigation links, hamburger menu for mobile, and dark mode toggle.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <!-- Navigation with hamburger menu and dark mode toggle -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+  <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+  <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+  <span class="subtitle">A Legacy of Love</span>
+      </div>
+      <!-- Hamburger menu button for mobile -->
+      <button id="menu-btn" aria-label="Open navigation menu" style="display:none;background:none;border:none;font-size:2rem;cursor:pointer;">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html" class="active">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Dark mode toggle button -->
+      <button id="dark-toggle" aria-label="Toggle dark mode" style="margin-left:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">🌙</button>
+    </div>
+  </nav>
+
+  <!--
+    Hero Section: Large orange header introducing the Enquiry page.
+    Includes a headline, subheading, and brief description.
+  -->
+  <header class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text">
+        <h2>Place an Enquiry</h2>
+        <h3>We're Here to Help</h3>
+        <p>Let us know your baking needs, and we'll get back to you within 24 hours with a personal response.</p>
+      </div>
+      <div class="hero-img" style="display:none;"></div>
+    </div>
+  </header>
+
+  <!--
+    Scroll to Top Button: Appears when user scrolls down, lets users quickly return to the top of the page.
+    Controlled by JavaScript in main.js.
+  -->
+  <button id="scroll-top-btn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;background:#b45309;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">↑</button>
+  <main class="main-content">
+    <!--
+      Main Content: Contains the enquiry form and related info.
+      Uses a centered container for layout.
+    -->
+    <div class="container" style="max-width:900px;">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <h1 style="font-size:2.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Place an Enquiry</h1>
+        <p style="font-size:1.25rem;color:#78350f;max-width:600px;margin:0 auto;">We'd love to help you with your baking needs. Fill out the form below and we'll get back to you within 24 hours.</p>
+      </div>
+      <!--
+        Get Involved Section: (if present) Encourages users to participate in bakery activities.
+      -->
+      
+      <div style="display:grid;grid-template-columns:1fr;gap:2rem;">
+        <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:2rem;">
+          <!--
+            Product Enquiry Form: Collects user details and enquiry info for products, cakes, courses, or events.
+            Uses a grid layout for responsive form fields.
+          -->
+          <h2 style="font-size:1.5rem;font-weight:700;color:#b45309;margin-bottom:1.5rem;">Product Enquiry Form</h2>
+          <form>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+              <div>
+                <label for="firstName" style="color:#b45309;font-weight:500;">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+              <div>
+                <label for="lastName" style="color:#b45309;font-weight:500;">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+              <div>
+                <label for="email" style="color:#b45309;font-weight:500;">Email Address *</label>
+                <input type="email" id="email" name="email" required style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+              <div>
+                <label for="phone" style="color:#b45309;font-weight:500;">Phone Number</label>
+                <input type="tel" id="phone" name="phone" style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <label for="enquiryType" style="color:#b45309;font-weight:500;">Enquiry Type *</label>
+              <select id="enquiryType" name="enquiryType" required style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+                <option value="">Select enquiry type</option>
+                <option value="individual-order">Individual Order</option>
+                <option value="signature-bakes">Signature Bakes Order</option>
+                <option value="custom-cake">Custom Cake Order</option>
+                <option value="bulk-order">Bulk Order</option>
+                <option value="corporate-catering">Corporate Catering</option>
+                <option value="wedding-cake">Wedding Cake</option>
+                <option value="course-enrollment">Course Enrollment</option>
+                <option value="event-inquiry">Event Inquiry</option>
+                <option value="volunteer-opportunity">Volunteer Opportunity</option>
+                <option value="sponsorship">Sponsorship Package</option>
+                <option value="general-enquiry">General Enquiry</option>
+              </select>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+              <div>
+                <label for="eventDate" style="color:#b45309;font-weight:500;">Required Date</label>
+                <input type="date" id="eventDate" name="eventDate" style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+              <div>
+                <label for="servings" style="color:#b45309;font-weight:500;">Number of Servings</label>
+                <input type="number" id="servings" name="servings" min="1" placeholder="e.g., 20" style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <label for="message" style="color:#b45309;font-weight:500;">Detailed Requirements *</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Please describe your requirements in detail. For custom cakes, include design preferences, flavors, size, and any special dietary needs." style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;"></textarea>
+              <div style="margin-top:1rem;">
+                <strong>Event Enquiry:</strong> Let us know which event you are interested in, number of attendees, and any special requirements.<br>
+                <strong>Customised Cake:</strong> Please include the occasion (e.g., birthday, wedding), preferred flavors, size/servings, design ideas (colors, themes, decorations), and any dietary needs (e.g., eggless, gluten-free). You can also upload inspiration images below.<br>
+                <strong>Volunteer Opportunity:</strong> Tell us how you'd like to help (setup, baking, logistics, etc.) and your availability.<br>
+                <strong>Sponsorship Package:</strong> Request our sponsorship brochure or describe your business and preferred level of support.
+              </div>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <label for="inspirationImages" style="color:#b45309;font-weight:500;">Upload Inspiration Images (Optional)</label>
+              <input type="file" id="inspirationImages" name="inspirationImages" accept="image/*" multiple style="width:100%;padding:0.5rem 0;">
+              <div style="font-size:0.98rem;color:#666;margin-top:0.3rem;">You may upload up to 3 images (jpg, png, gif) to help us understand your vision. Max 5MB each.</div>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <label for="budget" style="color:#b45309;font-weight:500;">Budget Range (Optional)</label>
+              <select id="budget" name="budget" style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+                <option value="">Select budget range</option>
+                <option value="under-200">Under R200</option>
+                <option value="200-500">R200 - R500</option>
+                <option value="500-1000">R500 - R1000</option>
+                <option value="1000-2000">R1000 - R2000</option>
+                <option value="2000-5000">R2000 - R5000</option>
+                <option value="over-5000">Over R5000</option>
+              </select>
+            </div>
+            <button type="submit" style="width:100%;background:#b45309;color:#fff;padding:1rem 0;border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;">Submit Enquiry</button>
+            <p style="font-size:0.95rem;color:#666;margin-top:1rem;text-align:center;">* Required fields. We'll respond to your enquiry within 24 hours.</p>
+          </form>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2rem;">
+          <div style="background:#fff7e6;padding:1.5rem;border-radius:1rem;">
+            <h3 style="font-size:1.1rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Quick Contact</h3>
+            <div style="color:#78350f;font-size:1rem;line-height:2;">
+              <div><span style="margin-right:0.5rem;">📞</span>+27 123 456 789</div>
+              <div><span style="margin-right:0.5rem;">✉️</span>hello@bakedbyruth.co.za</div>
+              <div><span style="margin-right:0.5rem;">🕒</span>Mon-Sat: 6AM-6PM</div>
+            </div>
+          </div>
+          <div style="background:#fee2e2;padding:1.5rem;border-radius:1rem;">
+            <h3 style="font-size:1.1rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Order Guidelines</h3>
+            <ul style="color:#78350f;font-size:1rem;line-height:2;margin:0;padding-left:1.2em;">
+              <li>• Signature bakes require 24 hours notice</li>
+              <li>• Custom cakes require 48 hours notice</li>
+              <li>• Bulk orders need 3-5 days advance booking</li>
+              <li>• Wedding cakes require consultation</li>
+              <li>• Course enrollment: 1 week before start</li>
+              <li>• Same-day orders available for standard items</li>
+              <li>• Delivery available within 15km radius</li>
+            </ul>
+          </div>
+          <div style="background:#ffedd5;padding:1.5rem;border-radius:1rem;">
+            <h3 style="font-size:1.1rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Popular Services</h3>
+            <div style="color:#78350f;font-size:1rem;line-height:2;">
+              <div style="margin-bottom:1rem;">
+                <div style="font-weight:600;color:#b45309;">Signature Treats Box</div>
+                <div style="font-size:0.98rem;color:#666;">Mixed brownies, cookies & cupcakes</div>
+                <div style="color:#b45309;font-weight:600;">From R320</div>
+              </div>
+              <div style="margin-bottom:1rem;">
+                <div style="font-weight:600;color:#b45309;">Basic Baking Course</div>
+                <div style="font-size:0.98rem;color:#666;">4-week beginner program</div>
+                <div style="color:#b45309;font-weight:600;">From R650</div>
+              </div>
+              <div>
+                <div style="font-weight:600;color:#b45309;">Event Catering</div>
+                <div style="font-size:0.98rem;color:#666;">Custom packages for any occasion</div>
+                <div style="color:#b45309;font-weight:600;">From R480</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <h3>Baked by Ruth</h3>
+        <p>Preserving Ruth's legacy through traditional baking with love and care.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: +27 123 456 789<br>Email: hello@bakedbyruth.co.za<br>Open: Mon-Sat 6AM-6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Baked by Ruth. All rights reserved. In loving memory of Ruth.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!--
+  enroll.html
+  Course enrollment page for Baked by Ruth.
+  Lets users sign up for baking courses.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata and links to the main stylesheet.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enroll in a Course | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding and navigation links.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+        <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+        <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+        <span class="subtitle">A Legacy of Love</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="main-content">
+    <!--
+      Main Content: Contains the enrollment form and success message.
+      Uses a centered container for layout.
+    -->
+    <div class="container" style="max-width:500px;margin:2rem auto;background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:2rem;">
+      <h2 style="color:#b45309;text-align:center;margin-bottom:1.5rem;">Enroll in a Course</h2>
+      <form id="enroll-form">
+        <!--
+          Enrollment Form: Collects user details for course registration.
+        -->
+        <div style="margin-bottom:1rem;">
+          <label for="name" style="display:block;font-weight:600;margin-bottom:0.5rem;">Full Name</label>
+          <input type="text" id="name" name="name" required style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #ccc;">
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label for="email" style="display:block;font-weight:600;margin-bottom:0.5rem;">Email</label>
+          <input type="email" id="email" name="email" required style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #ccc;">
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label for="phone" style="display:block;font-weight:600;margin-bottom:0.5rem;">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #ccc;">
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label for="course" style="display:block;font-weight:600;margin-bottom:0.5rem;">Course Name</label>
+          <input type="text" id="course" name="course" required style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #ccc;">
+        </div>
+        <button type="submit" style="background:#b45309;color:#fff;border:none;padding:0.75rem 1.5rem;border-radius:0.5rem;font-size:1rem;cursor:pointer;width:100%;">Submit Enrollment</button>
+      </form>
+      <div id="enroll-success" style="display:none;margin-top:1.5rem;color:green;text-align:center;font-weight:600;">Thank you for enrolling! We will contact you soon.</div>
+      <!--
+        Success Message: Shown after successful form submission.
+      -->
+    </div>
+  </main>
+  <script>
+    document.getElementById('enroll-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('enroll-form').style.display = 'none';
+      document.getElementById('enroll-success').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

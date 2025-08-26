@@ -1,0 +1,185 @@
+<!--
+  index.html
+  Home page for Baked by Ruth.
+  This file uses semantic HTML5, external CSS for styling, and JavaScript for interactivity.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata for SEO, social sharing, and responsive design.
+    Links to the main stylesheet and JavaScript file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baked by Ruth - A Legacy of Love and Baking. Traditional South African bakery, cakes, breads, and community events.">
+  <meta name="keywords" content="Bakery, South African, Cakes, Breads, Ruth, Polokwane, Scones, Magwinya, Custom Cakes, Baking Courses, Community Events">
+  <meta name="author" content="Khanyisa Shikwambana">
+  <meta property="og:title" content="Baked by Ruth | Home">
+  <meta property="og:description" content="A Legacy of Love and Baking. Traditional South African bakery, cakes, breads, and community events.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-placeholder.jpg">
+  <meta property="og:url" content="https://bakedbyruth.co.za/">
+  <title>Baked by Ruth | Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding, navigation links, hamburger menu for mobile, and dark mode toggle.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <!-- Navigation with hamburger menu and dark mode toggle -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+  <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+  <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+  <span class="subtitle">A Legacy of Love</span>
+      </div>
+      <!-- Hamburger menu button for mobile -->
+      <button id="menu-btn" aria-label="Open navigation menu" style="display:none;background:none;border:none;font-size:2rem;cursor:pointer;">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Dark mode toggle button -->
+      <button id="dark-toggle" aria-label="Toggle dark mode" style="margin-left:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">🌙</button>
+    </div>
+  </nav>
+
+  <!--
+    Scroll to Top Button: Appears when user scrolls down, lets users quickly return to the top of the page.
+    Controlled by JavaScript in main.js.
+  -->
+  <button id="scroll-top-btn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;background:#b45309;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">↑</button>
+
+  <!--
+    Hero Section: Main introduction to the bakery.
+    Includes a headline, subheading, description, call-to-action buttons, and a hero image.
+    Uses a flexbox layout for responsive design.
+  -->
+  <header class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text">
+        <h2>Baked by Ruth</h2>
+        <h3>A Legacy of Love and Baking</h3>
+        <p>From sunrise mornings in Limpopo to your table today - experience the warmth and tradition of Ruth's recipes, baked fresh daily with the same love and care that made her community smile.</p>
+        <div class="hero-buttons">
+          <a href="products.html" class="btn btn-primary">View Our Products</a>
+          <a href="about.html" class="btn btn-outline">Ruth's Story</a>
+        </div>
+      </div>
+      <div class="hero-img">
+  <img src="images/Phillemon Hlungwani.jpeg" alt="Fresh baked goods from Baked by Ruth including traditional South African breads and pastries" style="max-width:340px;width:100%;height:auto;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.10);object-fit:cover;">
+      </div>
+    </div>
+  </header>
+
+  <!--
+    Signature Bakes Section: Highlights featured products with images, descriptions, and prices.
+    Uses a grid layout for product cards.
+  -->
+  <section class="signature-bakes">
+    <div class="container">
+      <h2 style="font-size:2.2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;letter-spacing:0.5px;">Our Signature Bakes</h2>
+      <p style="font-size:1.2rem;font-weight:500;color:#78350f;margin-bottom:2rem;">Irresistible treats crafted with Ruth's special touch</p>
+      <div class="bakes-grid">
+        <!--
+          Product Card: Chocolate Fudge Brownies
+          Shows product image, name, description, and price.
+        -->
+        <div class="bake-card">
+          <img src="images/Benefits and Advantages of Fudgy Brownie This….jpeg" alt="Rich chocolate fudge brownies with glossy chocolate drizzle">
+          <h3>Chocolate Fudge Brownies</h3>
+          <p>Decadently rich and fudgy brownies made with premium dark chocolate, topped with silky chocolate ganache that melts in your mouth.</p>
+          <span class="price">R35 each | R380 dozen</span>
+        </div>
+        <!--
+          Product Card: Salted Caramel Dreams
+          Shows product image, name, description, and price.
+        -->
+        <div class="bake-card">
+          <img src="images/Sweet meets salty in the most delicious way with….jpeg" alt="Vanilla cupcakes with salted caramel frosting and caramel drizzle">
+          <h3>Salted Caramel Dreams</h3>
+          <p>Fluffy vanilla cupcakes filled with house-made caramel, crowned with creamy salted caramel buttercream and a hint of sea salt.</p>
+          <span class="price">R40 each | R450 dozen</span>
+        </div>
+        <!-- Red Velvet Delight -->
+        <div class="bake-card">
+          <img src="images/🎂 Red Velvet Cake – Enjoy a luscious, moist red….jpeg" alt="Red velvet cake slice with cream cheese frosting">
+          <h3>Red Velvet Delight</h3>
+          <p>Luxuriously smooth red velvet cake layered with tangy cream cheese frosting - a timeless classic that never goes out of style.</p>
+          <span class="price">R450 whole | R35 slice</span>
+        </div>
+        <!-- Lemon Drizzle Dreams -->
+        <div class="bake-card">
+          <img src="images/Heavenly Lemon Velvet Cake _ Inminutesmeals.jpeg" alt="Lemon drizzle cake with crystallized lemon glaze">
+          <h3>Lemon Drizzle Dreams</h3>
+          <p>Zesty lemon sponge cake soaked in fresh lemon syrup and topped with a crystallized lemon glaze that adds the perfect sweet-tart finish.</p>
+          <span class="price">R380 whole | R30 slice</span>
+        </div>
+        <!-- Double Chocolate Indulgence -->
+        <div class="bake-card">
+          <img src="images/70b039e9-deca-4040-b51a-91a097f3a3d6.jpeg" alt="Double chocolate chip cookies with gooey chocolate chunks">
+          <h3>Double Chocolate Indulgence</h3>
+          <p>Rich chocolate cookies loaded with dark and milk chocolate chunks, baked to perfection - crispy edges with a soft, chewy center.</p>
+          <span class="price">R18 each | R200 dozen</span>
+        </div>
+        <!-- Strawberry Cream Clouds -->
+        <div class="bake-card">
+          <img src="images/940f23b1-0b13-4ee9-a684-1b5b7f8dad8d.jpeg" alt="Delicate cream puffs filled with strawberry cream">
+          <h3>Strawberry Cream Clouds</h3>
+          <p>Light and airy choux pastry puffs filled with fresh strawberry cream and dusted with powdered sugar - like biting into a cloud of heaven.</p>
+          <span class="price">R32 each | R350 dozen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Impact Section -->
+  <section class="community-impact">
+    <div class="container">
+      <h2>Continuing Ruth's Legacy of Giving Back</h2>
+      <p>Through our baking courses and community events, we're helping young people build skills, start businesses, and create brighter futures - just as Ruth always dreamed.</p>
+      <div class="impact-buttons" style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;">
+  <a href="volunteer.html" class="btn btn-primary">Volunteer</a>
+  <a href="sponsor.html" class="btn btn-primary">Sponsor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <h3>Baked by Ruth</h3>
+        <p>Preserving Ruth's legacy through traditional baking with love and care.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: +27 123 456 789<br>Email: hello@bakedbyruth.co.za<br>Open: Mon-Sat 6AM-6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Baked by Ruth. All rights reserved. In loving memory of Ruth.</p>
+    </div>
+  </footer>
+</body>
+</html>

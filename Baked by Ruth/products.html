@@ -1,0 +1,527 @@
+<!--
+  products.html
+  Product listing page for Baked by Ruth.
+  Displays all bakery products, categories, and ordering options.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata for SEO, social sharing, and responsive design.
+    Links to the main stylesheet and JavaScript file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our range of products: signature bakes, traditional South African treats, breads, and custom cakes.">
+  <meta name="keywords" content="Products, Bakery, Cakes, Breads, Scones, Magwinya, Custom Cakes, Polokwane">
+  <meta name="author" content="Khanyisa Shikwambana">
+  <meta property="og:title" content="Products | Baked by Ruth">
+  <meta property="og:description" content="Signature bakes, traditional South African treats, breads, and custom cakes.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/brownies-placeholder.jpg">
+  <meta property="og:url" content="https://bakedbyruth.co.za/products.html">
+  <title>Products | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding, navigation links, cart icon, hamburger menu for mobile, and dark mode toggle.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <!-- Navigation with hamburger menu and dark mode toggle -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+  <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+  <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+  <span class="subtitle">A Legacy of Love</span>
+  <!-- Removed 'Add to Cart' text/button next to logo as requested -->
+      </div>
+      <!-- Hamburger menu button for mobile -->
+      <button id="menu-btn" aria-label="Open navigation menu" style="display:none;background:none;border:none;font-size:2rem;cursor:pointer;">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Cart icon button -->
+      <button id="cart-btn" aria-label="View cart" style="margin-left:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">
+        <span style="position:relative;display:inline-block;">
+          🛒
+          <span id="cart-count" style="position:absolute;top:-0.5em;right:-0.7em;background:#b45309;color:#fff;font-size:0.85rem;font-weight:700;border-radius:50%;padding:0.1em 0.5em;min-width:1.5em;text-align:center;line-height:1;display:none;">0</span>
+        </span>
+      </button>
+      <!-- Dark mode toggle button -->
+      <button id="dark-toggle" aria-label="Toggle dark mode" style="margin-left:0.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">🌙</button>
+    </div>
+  </nav>
+
+  <!--
+    Hero Section: Large orange header introducing the Products page.
+    Includes a headline, subheading, and brief description.
+  -->
+  <header class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text">
+        <h2>Our Products</h2>
+        <h3>Signature Bakes & Local Favourites</h3>
+        <p>From traditional South African favorites to indulgent signature bakes, every item is crafted fresh daily using Ruth's time-tested recipes and premium ingredients.</p>
+      </div>
+      <div class="hero-img" style="display:none;"></div>
+    </div>
+  </header>
+
+  <!--
+    Scroll to Top Button: Appears when user scrolls down, lets users quickly return to the top of the page.
+    Controlled by JavaScript in main.js.
+  -->
+  <button id="scroll-top-btn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;background:#b45309;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">↑</button>
+  <main class="main-content">
+    <!--
+      Main Content: Contains all product sections, including signature bakes, traditional treats, breads, and custom cakes.
+      Uses a centered container for layout.
+    -->
+    <div class="container" style="max-width:1100px;">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <h1 style="font-size:2.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Our Products</h1>
+        <p style="font-size:1.25rem;color:#78350f;max-width:600px;margin:0 auto;">From traditional South African favorites to indulgent signature bakes, every item is crafted fresh daily using Ruth's time-tested recipes and premium ingredients.</p>
+      </div>
+
+      <!--
+        Signature Bakes & Indulgent Treats Section: Highlights featured products with images, descriptions, and prices.
+        Uses a grid layout for product cards.
+      -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:2rem;">Signature Bakes & Indulgent Treats</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;">
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <!--
+              Product Card: Each card shows product image, name, description, and price.
+              Some products have single and dozen/tray/whole options, explained in the cart logic.
+            -->
+            <img src="images/Benefits and Advantages of Fudgy Brownie This….jpeg" alt="Rich chocolate fudge brownies" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Chocolate Fudge Brownies</h3>
+            <p style="color:#666;">Decadently rich brownies made with premium dark chocolate and topped with silky ganache.</p>
+            <span style="color:#b45309;font-weight:600;">R35 each | R380 dozen</span>
+    <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+      <button class="add-to-cart-btn" data-product="Chocolate Fudge Brownies (Single)" data-price="35" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R35)</button>
+      <button class="add-to-cart-btn" data-product="Chocolate Fudge Brownies (Dozen)" data-price="380" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R380)</button>
+    </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Sweet meets salty in the most delicious way with….jpeg" alt="Salted caramel cupcakes with caramel drizzle" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Salted Caramel Dreams</h3>
+            <p style="color:#666;">Vanilla cupcakes filled with house-made caramel and topped with salted buttercream.</p>
+            <span style="color:#b45309;font-weight:600;">R40 each | R450 dozen</span>
+    <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+      <button class="add-to-cart-btn" data-product="Salted Caramel Dreams (Single)" data-price="40" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R40)</button>
+      <button class="add-to-cart-btn" data-product="Salted Caramel Dreams (Dozen)" data-price="450" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R450)</button>
+    </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/🎂 Red Velvet Cake – Enjoy a luscious, moist red….jpeg" alt="Red velvet cake with cream cheese frosting" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Red Velvet Delight</h3>
+            <p style="color:#666;">Luxuriously smooth red velvet cake layered with tangy cream cheese frosting.</p>
+            <span style="color:#b45309;font-weight:600;">R450 whole | R35 slice</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Red Velvet Delight (Slice)" data-price="35" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R35)</button>
+    <button class="add-to-cart-btn" data-product="Red Velvet Delight (Whole)" data-price="450" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Whole (R450)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Heavenly Lemon Velvet Cake _ Inminutesmeals.jpeg" alt="Lemon drizzle cake with crystallized glaze" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Lemon Drizzle Dreams</h3>
+            <p style="color:#666;">Zesty lemon sponge soaked in fresh lemon syrup with crystallized lemon glaze.</p>
+            <span style="color:#b45309;font-weight:600;">R380 whole | R30 slice</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Lemon Drizzle Dreams (Slice)" data-price="30" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R30)</button>
+    <button class="add-to-cart-btn" data-product="Lemon Drizzle Dreams (Whole)" data-price="380" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Whole (R380)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/70b039e9-deca-4040-b51a-91a097f3a3d6.jpeg" alt="Double chocolate chip cookies" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Double Chocolate Indulgence</h3>
+            <p style="color:#666;">Rich chocolate cookies loaded with dark and milk chocolate chunks - crispy yet chewy.</p>
+            <span style="color:#b45309;font-weight:600;">R18 each | R200 dozen</span>
+    <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+      <button class="add-to-cart-btn" data-product="Double Chocolate Indulgence (Single)" data-price="18" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R18)</button>
+      <button class="add-to-cart-btn" data-product="Double Chocolate Indulgence (Dozen)" data-price="200" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R200)</button>
+    </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/940f23b1-0b13-4ee9-a684-1b5b7f8dad8d.jpeg" alt="Strawberry cream puffs dusted with powdered sugar" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Strawberry Cream Clouds</h3>
+            <p style="color:#666;">Light choux pastry filled with fresh strawberry cream and dusted with powdered sugar.</p>
+            <span style="color:#b45309;font-weight:600;">R32 each | R350 dozen</span>
+    <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+      <button class="add-to-cart-btn" data-product="Strawberry Cream Clouds (Single)" data-price="32" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R32)</button>
+      <button class="add-to-cart-btn" data-product="Strawberry Cream Clouds (Dozen)" data-price="350" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R350)</button>
+    </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/d056d37f-4b40-4063-9288-9908e533e130.jpeg" alt="Black Forest cake with cherries and cream" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Black Forest Cake</h3>
+            <p style="color:#666;">Moist chocolate sponge layered with whipped cream and cherries, finished with chocolate shavings.</p>
+            <span style="color:#b45309;font-weight:600;">R480 whole | R40 slice</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Black Forest Cake (Slice)" data-price="40" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R40)</button>
+    <button class="add-to-cart-btn" data-product="Black Forest Cake (Whole)" data-price="480" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Whole (R480)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Banana Bread.jpeg" alt="Banana bread loaf" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Banana Bread</h3>
+            <p style="color:#666;">Classic moist banana bread with a hint of cinnamon and crunchy walnuts.</p>
+            <span style="color:#b45309;font-weight:600;">R30 slice | R220 loaf</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Banana Bread (Slice)" data-price="30" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R30)</button>
+    <button class="add-to-cart-btn" data-product="Banana Bread (Loaf)" data-price="220" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Loaf (R220)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Rich & Moist Fruit Cake Recipe _.jpeg" alt="Traditional fruit cake" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Traditional Fruit Cake</h3>
+            <p style="color:#666;">Rich fruit cake packed with dried fruits and nuts, soaked in brandy for extra flavor.</p>
+            <span style="color:#b45309;font-weight:600;">R500 whole | R45 slice</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Traditional Fruit Cake (Slice)" data-price="45" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R45)</button>
+    <button class="add-to-cart-btn" data-product="Traditional Fruit Cake (Whole)" data-price="500" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Whole (R500)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/The BEST Pecan Pie (Without Corn Syrup!)….jpeg" alt="Pecan pie slice" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Pecan Pie</h3>
+            <p style="color:#666;">Sweet and nutty pecan pie with a buttery crust and gooey filling.</p>
+            <span style="color:#b45309;font-weight:600;">R35 slice | R320 whole</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Pecan Pie (Slice)" data-price="35" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R35)</button>
+    <button class="add-to-cart-btn" data-product="Pecan Pie (Whole)" data-price="320" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Whole (R320)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Homemade lammys are super easy to make - the….jpeg" alt="Chocolate and coconut lamingtons" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Lamingtons</h3>
+            <p style="color:#666;">Sponge cake squares dipped in chocolate and rolled in coconut, a South African favorite.</p>
+            <span style="color:#b45309;font-weight:600;">R15 each | R140 dozen</span>
+    <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+      <button class="add-to-cart-btn" data-product="Lamingtons (Single)" data-price="15" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R15)</button>
+      <button class="add-to-cart-btn" data-product="Lamingtons (Dozen)" data-price="140" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R140)</button>
+    </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Close up shot of apple crumble cheesecake on a….jpeg" alt="Apple crumble dessert" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Apple Crumble</h3>
+            <p style="color:#666;">Warm apple filling topped with a crunchy oat and cinnamon crumble.</p>
+            <span style="color:#b45309;font-weight:600;">R30 slice | R250 tray</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Apple Crumble (Slice)" data-price="30" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R30)</button>
+    <button class="add-to-cart-btn" data-product="Apple Crumble (Tray)" data-price="250" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Tray (R250)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Mary Berry Best Ginger Biscuits Recipe _ BBC2 Love….jpeg" alt="Ginger biscuits" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Ginger Biscuits</h3>
+            <p style="color:#666;">Crunchy, spicy ginger biscuits, perfect for dunking in tea.</p>
+            <span style="color:#b45309;font-weight:600;">R10 each | R100 dozen</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Ginger Biscuits (Single)" data-price="10" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R10)</button>
+    <button class="add-to-cart-btn" data-product="Ginger Biscuits (Dozen)" data-price="100" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R100)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/f4d219c8-1d53-4442-b96e-20b6dc8aeed2.jpeg" alt="Buttery shortbread cookies" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Shortbread</h3>
+            <p style="color:#666;">Classic buttery shortbread, melt-in-your-mouth texture.</p>
+            <span style="color:#b45309;font-weight:600;">R12 each | R110 dozen</span>
+  <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+    <button class="add-to-cart-btn" data-product="Shortbread (Single)" data-price="12" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R12)</button>
+    <button class="add-to-cart-btn" data-product="Shortbread (Dozen)" data-price="110" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R110)</button>
+  </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/1a0be9c8-2f2d-47d6-a3e5-5da2cc459c2e.jpeg" alt="Traditional jam tarts with lattice top" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Jam Tarts</h3>
+            <p style="color:#666;">Classic buttery pastry filled with sweet fruit jam and a delicate lattice top.</p>
+            <span style="color:#b45309;font-weight:600;">R15 each | R150 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Jam Tarts (Single)" data-price="15" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R15)</button>
+                <button class="add-to-cart-btn" data-product="Jam Tarts (Dozen)" data-price="150" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R150)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/b8a30a23-78ce-43cb-a33a-bc961426fd7f.jpeg" alt="Golden scones served with jam and cream" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Classic Scones</h3>
+            <p style="color:#666;">Fluffy, golden scones perfect with jam and cream. A timeless tea-time treat.</p>
+            <span style="color:#b45309;font-weight:600;">R18 each | R180 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Classic Scones (Single)" data-price="18" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R18)</button>
+                <button class="add-to-cart-btn" data-product="Classic Scones (Dozen)" data-price="180" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R180)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/COCONUT CREAM TART.jpeg" alt="Coconut tart with golden crust" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Coconut Tart</h3>
+            <p style="color:#666;">Sweet coconut filling in a crisp pastry shell, a South African classic.</p>
+            <span style="color:#b45309;font-weight:600;">R20 each | R200 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Coconut Tart (Single)" data-price="20" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R20)</button>
+                <button class="add-to-cart-btn" data-product="Coconut Tart (Dozen)" data-price="200" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R200)</button>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Traditional South African Bakes -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:2rem;">Traditional South African Bakes</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;">
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/bbfd2e59-a740-42c0-a4e8-8d168fafd01f.jpeg" alt="Golden fat cakes (magwinya) fresh from the oil" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Fat Cakes (Magwinya)</h3>
+            <p style="color:#666;">Ruth's signature golden fat cakes, crispy outside and fluffy inside. Made fresh every morning.</p>
+            <span style="color:#b45309;font-weight:600;">R15 each | R150 dozen</span>
+            <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+              <button class="add-to-cart-btn" data-product="Fat Cakes (Magwinya) (Single)" data-price="15" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R15)</button>
+              <button class="add-to-cart-btn" data-product="Fat Cakes (Magwinya) (Dozen)" data-price="150" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R150)</button>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/6c48e159-f85d-42d8-bb6e-23f0c7cee836.jpeg" alt="Pumpkin fritters (pampoenkoekies)" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Pumpkin Fritters (Pampoenkoekies)</h3>
+            <p style="color:#666;">Sweet pumpkin fritters dusted with cinnamon sugar, a South African classic.</p>
+            <span style="color:#b45309;font-weight:600;">R10 each | R100 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Pumpkin Fritters (Pampoenkoekies) (Single)" data-price="10" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R10)</button>
+                <button class="add-to-cart-btn" data-product="Pumpkin Fritters (Pampoenkoekies) (Dozen)" data-price="100" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R100)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Caramel Peppermint Crisp Mousse Cake1web More.jpeg" alt="Peppermint crisp tart" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Peppermint Crisp Tart</h3>
+            <p style="color:#666;">Layers of whipped cream, caramel, and peppermint chocolate on a biscuit base.</p>
+            <span style="color:#b45309;font-weight:600;">R35 slice | R300 tray</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Peppermint Crisp Tart (Slice)" data-price="35" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R35)</button>
+                <button class="add-to-cart-btn" data-product="Peppermint Crisp Tart (Tray)" data-price="300" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Tray (R300)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/2b442c8e-3557-4f15-9701-ed5500475a59.jpeg" alt="Soetkoekies (spiced biscuits)" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Soetkoekies</h3>
+            <p style="color:#666;">Traditional spiced biscuits with a hint of aniseed and cinnamon.</p>
+            <span style="color:#b45309;font-weight:600;">R10 each | R100 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Soetkoekies (Single)" data-price="10" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R10)</button>
+                <button class="add-to-cart-btn" data-product="Soetkoekies (Dozen)" data-price="100" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R100)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/01e57fa6-400a-4eca-9e12-1c219e56d9fb.jpeg" alt="Cheese scones" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Cheese Scones</h3>
+            <p style="color:#666;">Savory scones loaded with cheddar cheese, perfect for breakfast or snacks.</p>
+            <span style="color:#b45309;font-weight:600;">R20 each | R180 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Cheese Scones (Single)" data-price="20" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R20)</button>
+                <button class="add-to-cart-btn" data-product="Cheese Scones (Dozen)" data-price="180" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R180)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/South African Koeksisters got that perfect balance….jpeg" alt="Traditional South African koeksisters" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Koeksisters</h3>
+            <p style="color:#666;">Plaited dough, deep-fried and soaked in sweet syrup. Sticky, crunchy, and deliciously South African.</p>
+            <span style="color:#b45309;font-weight:600;">R12 each | R120 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Koeksisters (Single)" data-price="12" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R12)</button>
+                <button class="add-to-cart-btn" data-product="Koeksisters (Dozen)" data-price="120" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R120)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/The Delightful South African Dessert_ Milk Tart….jpeg" alt="Traditional milk tart (melktert)" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Milk Tart (Melktert)</h3>
+            <p style="color:#666;">Creamy custard tart with a hint of cinnamon, a beloved South African dessert.</p>
+            <span style="color:#b45309;font-weight:600;">R30 slice | R250 whole</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Milk Tart (Melktert) (Slice)" data-price="30" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Slice (R30)</button>
+                <button class="add-to-cart-btn" data-product="Milk Tart (Melktert) (Whole)" data-price="250" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Whole (R250)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Amagwinya [Vetkoek] with Spiced Boerewors Mince….jpeg" alt="Vetkoek stuffed with mince" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Vetkoek</h3>
+            <p style="color:#666;">Soft fried dough balls, served plain or filled with savory mince.</p>
+            <span style="color:#b45309;font-weight:600;">R15 each | R150 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Vetkoek (Single)" data-price="15" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R15)</button>
+                <button class="add-to-cart-btn" data-product="Vetkoek (Dozen)" data-price="150" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R150)</button>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fresh Breads & Rolls -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:2rem;">Fresh Breads & Rolls</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;">
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Whole Wheat Bread Recipes - El Mundo Eats.jpeg" alt="Whole wheat bread loaf sliced showing texture" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Whole Wheat Bread</h3>
+            <p style="color:#666;">Hearty, nutritious whole wheat bread baked fresh daily.</p>
+            <span style="color:#b45309;font-weight:600;">R35 per loaf</span>
+              <button class="add-to-cart-btn" data-product="Whole Wheat Bread" data-price="35" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add to Cart</button>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/a415c04d-93b0-4567-8d41-b0aaf5975237.jpeg" alt="Rye bread loaf" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Rye Bread</h3>
+            <p style="color:#666;">Dense, flavorful rye bread, perfect for sandwiches and toasts.</p>
+            <span style="color:#b45309;font-weight:600;">R40 per loaf</span>
+  <button class="add-to-cart-btn" data-product="Rye Bread" data-price="40" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add to Cart</button>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/4670207e-3509-4ec3-a6a6-b3f3635ced84.jpeg" alt="Ciabatta bread" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Ciabatta</h3>
+            <p style="color:#666;">Rustic Italian-style bread with a crisp crust and airy crumb.</p>
+            <span style="color:#b45309;font-weight:600;">R35 per loaf</span>
+              <button class="add-to-cart-btn" data-product="Ciabatta" data-price="35" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add to Cart</button>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/516d4bcb-0206-4965-a0de-86f9f568513e.jpeg" alt="Mini burger buns" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Mini Buns</h3>
+            <p style="color:#666;">Soft, bite-sized buns ideal for sliders or party platters.</p>
+            <span style="color:#b45309;font-weight:600;">R5 each | R50 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Mini Buns (Single)" data-price="5" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R5)</button>
+                <button class="add-to-cart-btn" data-product="Mini Buns (Dozen)" data-price="50" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R50)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Laila _Bread and Baking_ on Instagram_ _Brötchen….jpeg" alt="Seeded bread rolls" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Seeded Rolls</h3>
+            <p style="color:#666;">Soft, fluffy rolls topped with a mix of nutritious seeds. Perfect for sandwiches or as a side.</p>
+            <span style="color:#b45309;font-weight:600;">R6 each | R60 dozen</span>
+              <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+                <button class="add-to-cart-btn" data-product="Seeded Rolls (Single)" data-price="6" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Single (R6)</button>
+                <button class="add-to-cart-btn" data-product="Seeded Rolls (Dozen)" data-price="60" style="background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add Dozen (R60)</button>
+              </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/This is a classic white bread recipe, and so easy….jpeg" alt="Classic white bread loaf" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Classic White Bread</h3>
+            <p style="color:#666;">Soft, fluffy white bread with a golden crust. A family favorite for any meal.</p>
+            <span style="color:#b45309;font-weight:600;">R30 per loaf</span>
+  <button class="add-to-cart-btn" data-product="Classic White Bread" data-price="30" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Custom Celebration Cakes -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:2rem;">Custom Celebration Cakes</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;">
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/8f5ae160-6d63-4811-a443-4ca1c8d416db.jpeg" alt="Elegant birthday cake with decorative frosting" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Birthday Cakes</h3>
+            <p style="color:#666;">Custom birthday cakes in various flavors and designs. Make your celebration extra special.</p>
+            <span style="color:#b45309;font-weight:600;">From R300 - R800</span>
+  <a href="enquiry.html" class="btn btn-primary" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;text-decoration:none;">Enquire Now</a>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/Love natural textures and earthy tones_ These….jpeg" alt="Elegant wedding cake" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Wedding Cakes</h3>
+            <p style="color:#666;">Bespoke wedding cakes tailored to your theme and taste, from classic to modern designs.</p>
+            <span style="color:#b45309;font-weight:600;">From R1200</span>
+  <a href="enquiry.html" class="btn btn-primary" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;text-decoration:none;">Enquire Now</a>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/ae00ac7c-35d2-47ba-8ae0-e9a607758c75.jpeg" alt="Cupcake tower" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Cupcake Towers</h3>
+            <p style="color:#666;">Stunning towers of assorted cupcakes for parties, weddings, and events.</p>
+            <span style="color:#b45309;font-weight:600;">From R600</span>
+  <a href="enquiry.html" class="btn btn-primary" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;text-decoration:none;">Enquire Now</a>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:1rem;text-align:center;">
+            <img src="images/c77de19a-a816-42e3-bc0b-db52046b4153.jpeg" alt="Number cake for birthdays" style="width:100%;height:200px;object-fit:cover;border-radius:0.5rem;margin-bottom:0.5rem;">
+            <h3 style="color:#b45309;font-size:1.2rem;font-weight:600;margin:0.5rem 0;">Number Cakes</h3>
+            <p style="color:#666;">Custom cakes shaped as numbers, perfect for milestone birthdays and anniversaries.</p>
+            <span style="color:#b45309;font-weight:600;">From R500</span>
+  <a href="enquiry.html" class="btn btn-primary" style="margin-top:0.5rem;background:#b45309;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;text-decoration:none;">Enquire Now</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bulk Orders & Catering -->
+      <section style="background:#fff7e6;padding:2rem;border-radius:1rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:1rem;text-align:center;">Bulk Orders & Catering</h2>
+        <div style="text-align:center;max-width:600px;margin:0 auto;">
+          <p style="font-size:1.1rem;color:#78350f;margin-bottom:1.5rem;">Perfect for schools, offices, events, and special occasions. We offer special pricing for bulk orders and can customize packages to meet your needs.</p>
+          <a href="enquiry.html" class="btn btn-primary" style="margin-top:1rem;">Request Bulk Order Quote</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+    <!-- Location Map -->
+    <section style="margin:2rem 0;text-align:center;">
+      <h2 style="color:#b45309;font-size:1.5rem;font-weight:700;margin-bottom:1rem;">Find Us</h2>
+      <div style="max-width:600px;margin:0 auto;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.019073964624!2d29.467!3d-23.908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec6d9e2b2e2e2e3%3A0x0!2sBaked%20by%20Ruth!5e0!3m2!1sen!2sza!4v1692890000000!5m2!1sen!2sza" width="100%" height="350" style="border:0;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div style="margin-top:0.5rem;"><a href="https://maps.app.goo.gl/9CQvAy8owuKxaYMPA" target="_blank" rel="noopener" style="color:#b45309;text-decoration:underline;font-weight:600;">Open in Google Maps</a></div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <h3>Baked by Ruth</h3>
+        <p>Preserving Ruth's legacy through traditional baking with love and care.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: +27 123 456 789<br>Email: hello@bakedbyruth.co.za<br>Open: Mon-Sat 6AM-6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Baked by Ruth. All rights reserved. In loving memory of Ruth.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);z-index:2000;align-items:center;justify-content:center;">
+    <div style="background:#fff;border-radius:1rem;max-width:400px;width:90vw;padding:2rem;box-shadow:0 4px 24px rgba(0,0,0,0.15);position:relative;">
+      <button id="close-cart" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">&times;</button>
+      <h2 style="color:#b45309;margin-bottom:1rem;">Your Cart</h2>
+      <div id="cart-items"></div>
+      <div id="cart-total" style="margin:1rem 0;font-weight:600;color:#78350f;"></div>
+      <button id="checkout-btn" style="background:#b45309;color:#fff;border:none;padding:0.75rem 1.5rem;border-radius:0.5rem;font-size:1rem;cursor:pointer;width:100%;">Checkout</button>
+  </div>
+  </div>
+  <script>
+    // Show popup message when checkout is clicked
+    document.addEventListener('DOMContentLoaded', function() {
+      var checkoutBtn = document.getElementById('checkout-btn');
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function() {
+          alert('This page is not implemented yet');
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

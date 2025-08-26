@@ -1,0 +1,231 @@
+<!--
+  contact.html
+  Contact page for Baked by Ruth.
+  Lets users find contact info and send messages.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata for SEO, social sharing, and responsive design.
+    Links to the main stylesheet and JavaScript file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Baked by Ruth. Find our locations, phone, email, WhatsApp, and send us a message.">
+  <meta name="keywords" content="Contact, Bakery, Phone, Email, WhatsApp, Location, Polokwane, South Africa">
+  <meta name="author" content="Khanyisa Shikwambana">
+  <meta property="og:title" content="Contact | Baked by Ruth">
+  <meta property="og:description" content="Contact Baked by Ruth. Find our locations, phone, email, WhatsApp, and send us a message.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-placeholder.jpg">
+  <meta property="og:url" content="https://bakedbyruth.co.za/contact.html">
+  <title>Contact | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding, navigation links, hamburger menu for mobile, and dark mode toggle.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <!-- Navigation with hamburger menu and dark mode toggle -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+  <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+  <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+  <span class="subtitle">A Legacy of Love</span>
+      </div>
+      <!-- Hamburger menu button for mobile -->
+      <button id="menu-btn" aria-label="Open navigation menu" style="display:none;background:none;border:none;font-size:2rem;cursor:pointer;">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <!-- Dark mode toggle button -->
+      <button id="dark-toggle" aria-label="Toggle dark mode" style="margin-left:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">🌙</button>
+    </div>
+  </nav>
+
+  <!--
+    Hero Section: Large orange header introducing the Contact page.
+    Includes a headline, subheading, and brief description.
+  -->
+  <header class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text">
+        <h2>Contact Us</h2>
+        <h3>We'd Love to Hear from You</h3>
+        <p>Visit us at our bakery locations or get in touch. We're here to help make your celebrations sweeter.</p>
+      </div>
+      <div class="hero-img" style="display:none;"></div>
+    </div>
+  </header>
+
+  <!--
+    Scroll to Top Button: Appears when user scrolls down, lets users quickly return to the top of the page.
+    Controlled by JavaScript in main.js.
+  -->
+  <button id="scroll-top-btn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;background:#b45309;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">↑</button>
+  <main class="main-content">
+    <!--
+      Main Content: Contains all contact info, locations, and the contact form.
+      Uses a centered container for layout.
+    -->
+    <div class="container" style="max-width:1100px;">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <h1 style="font-size:2.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Contact Us</h1>
+        <p style="font-size:1.25rem;color:#78350f;max-width:600px;margin:0 auto;">Visit us at our bakery locations or get in touch. We're here to help make your celebrations sweeter.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-bottom:3rem;">
+        <!--
+          Contact Info Cards: Show phone, email, WhatsApp, and address details.
+        -->
+        <div style="text-align:center;background:#fff7e6;padding:2rem;border-radius:1rem;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">📞</div>
+          <h3 style="font-size:1.2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">Phone</h3>
+          <p style="color:#78350f;margin-bottom:0.5rem;">+27 123 456 789</p>
+          <p style="font-size:0.98rem;color:#666;">Mon-Sat: 6AM-6PM</p>
+        </div>
+        <div style="text-align:center;background:#fee2e2;padding:2rem;border-radius:1rem;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">✉️</div>
+          <h3 style="font-size:1.2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">Email</h3>
+          <p style="color:#78350f;margin-bottom:0.5rem;">hello@bakedbyruth.co.za</p>
+          <p style="font-size:0.98rem;color:#666;">We reply within 24 hours</p>
+        </div>
+        <div style="text-align:center;background:#ffedd5;padding:2rem;border-radius:1rem;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">📱</div>
+          <h3 style="font-size:1.2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">WhatsApp</h3>
+          <p style="color:#78350f;margin-bottom:0.5rem;">+27 123 456 789</p>
+          <p style="font-size:0.98rem;color:#666;">Quick orders & enquiries</p>
+        </div>
+      </div>
+
+      <!-- Locations -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Our Locations</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem;">
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+            <img src="images/contact-mainbakery.jpg" alt="Main Baked by Ruth bakery storefront with warm lighting" style="width:100%;height:200px;object-fit:cover;">
+            <div style="padding:1.5rem;">
+              <h3 style="font-size:1.5rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">Main Bakery</h3>
+              <div style="font-size:1rem;color:#78350f;margin-bottom:1rem;">
+                <p><span style="margin-right:0.5rem;">📍</span>123 Heritage Street, Polokwane, Limpopo</p>
+                <p><span style="margin-right:0.5rem;">🕒</span>Monday - Saturday: 6:00 AM - 6:00 PM</p>
+                <p><span style="margin-right:0.5rem;">🕒</span>Sunday: 7:00 AM - 2:00 PM</p>
+                <p><span style="margin-right:0.5rem;">🚗</span>Free parking available</p>
+              </div>
+              <p style="color:#666;">Our main bakery where Ruth's journey began. Full range of products, custom cake consultations, and bulk order pickups.</p>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+            <img src="images/contact-express.jpg" alt="Baked by Ruth express location in shopping center" style="width:100%;height:200px;object-fit:cover;">
+            <div style="padding:1.5rem;">
+              <h3 style="font-size:1.5rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">Express Location</h3>
+              <div style="font-size:1rem;color:#78350f;margin-bottom:1rem;">
+                <p><span style="margin-right:0.5rem;">📍</span>Mall of the North, Shop 45, Polokwane</p>
+                <p><span style="margin-right:0.5rem;">🕒</span>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                <p><span style="margin-right:0.5rem;">🕒</span>Sunday: 10:00 AM - 5:00 PM</p>
+                <p><span style="margin-right:0.5rem;">🛍️</span>Mall parking & foot traffic</p>
+              </div>
+              <p style="color:#666;">Convenient location for fresh daily items, coffee pairings, and quick pickups. Limited custom cake services.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section style="margin-bottom:3rem;">
+        <div style="max-width:700px;margin:0 auto;">
+          <h2 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Send Us a Message</h2>
+          <form style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:2rem;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+              <div>
+                <label for="contactName" style="color:#b45309;font-weight:500;">Your Name *</label>
+                <input type="text" id="contactName" name="contactName" required style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+              <div>
+                <label for="contactEmail" style="color:#b45309;font-weight:500;">Email Address *</label>
+                <input type="email" id="contactEmail" name="contactEmail" required style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+              </div>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <label for="contactSubject" style="color:#b45309;font-weight:500;">Subject *</label>
+              <select id="contactSubject" name="contactSubject" required style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;">
+                <option value="">Select a subject</option>
+                <option value="general-inquiry">General Inquiry</option>
+                <option value="product-feedback">Product Feedback</option>
+                <option value="catering-services">Catering Services</option>
+                <option value="partnership">Partnership Opportunity</option>
+                <option value="complaint">Complaint or Issue</option>
+                <option value="compliment">Compliment</option>
+              </select>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <label for="contactMessage" style="color:#b45309;font-weight:500;">Message *</label>
+              <textarea id="contactMessage" name="contactMessage" rows="5" required placeholder="Tell us how we can help you..." style="width:100%;padding:0.75rem 1rem;border:1px solid #e5e7eb;border-radius:0.5rem;font-size:1rem;"></textarea>
+            </div>
+            <button type="submit" style="width:100%;background:#b45309;color:#fff;padding:1rem 0;border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section style="background:#f3f4f6;padding:2rem;border-radius:1rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Find Us</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+          <div>
+            <iframe src="https://www.google.com/maps?q=Cakes+at+Large,+24+Rabe+St,+S+Ext+17+The+Glenkens+Limpopo+0699&output=embed" width="100%" height="260" style="border:0;border-radius:1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bakery Location Map"></iframe>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Getting to Our Main Bakery</h3>
+            <div style="color:#78350f;font-size:1rem;line-height:2;">
+              <p><strong>From N1 Highway:</strong> Take R101 exit toward Polokwane. Continue on R101 for 8km, turn left at Heritage Street.</p>
+              <p><strong>Public Transport:</strong> Take BRT Bus Route 12 to Heritage Street stop, walk 200m north.</p>
+              <p><strong>Landmarks:</strong> Located next to Heritage Primary School, opposite Pick n Pay Heritage Plaza.</p>
+            </div>
+            <div style="margin-top:1.5rem;padding:1rem;background:#fff7e6;border-radius:0.75rem;">
+              <h4 style="font-weight:600;color:#b45309;margin-bottom:0.5rem;">Delivery Service</h4>
+              <p style="color:#78350f;font-size:0.98rem;">We deliver within 15km of our main bakery. Minimum order R150. Delivery fee R50. Free delivery for orders over R500.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <h3>Baked by Ruth</h3>
+        <p>Preserving Ruth's legacy through traditional baking with love and care.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: +27 123 456 789<br>Email: hello@bakedbyruth.co.za<br>Open: Mon-Sat 6AM-6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Baked by Ruth. All rights reserved. In loving memory of Ruth.</p>
+    </div>
+  </footer>
+</body>
+</html>

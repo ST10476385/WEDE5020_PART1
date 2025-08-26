@@ -1,0 +1,186 @@
+<!--
+  about.html
+  About page for Baked by Ruth.
+  Explains the bakery's story, mission, and team.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata for SEO, social sharing, and responsive design.
+    Links to the main stylesheet and JavaScript file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Baked by Ruth - Learn about Ruth's story, mission, vision, and values. Discover the team behind the legacy.">
+  <meta name="keywords" content="About, Ruth, Bakery, Legacy, Team, Mission, Vision, Values, Polokwane">
+  <meta name="author" content="Khanyisa Shikwambana">
+  <meta property="og:title" content="About Us | Baked by Ruth">
+  <meta property="og:description" content="Learn about Ruth's story, mission, vision, and values. Meet the team behind Baked by Ruth.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/ruth-portrait.jpg">
+  <meta property="og:url" content="https://bakedbyruth.co.za/about.html">
+  <title>About Us | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding, navigation links, hamburger menu for mobile, and dark mode toggle.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <!-- Navigation with hamburger menu and dark mode toggle -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+  <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+  <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+  <span class="subtitle">A Legacy of Love</span>
+      </div>
+      <!-- Hamburger menu button for mobile -->
+      <button id="menu-btn" aria-label="Open navigation menu" style="display:none;background:none;border:none;font-size:2rem;cursor:pointer;">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Dark mode toggle button -->
+      <button id="dark-toggle" aria-label="Toggle dark mode" style="margin-left:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">🌙</button>
+    </div>
+  </nav>
+
+  <!--
+    Hero Section: Large orange header introducing the About page.
+    Includes a headline, subheading, and brief description.
+  -->
+  <header class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text">
+        <h2>About Baked by Ruth</h2>
+        <h3>Our Story & Legacy</h3>
+        <p>A tribute to Ruth – a woman whose passion for baking created connections, brought joy, and built a legacy that lives on in every loaf.</p>
+      </div>
+      <div class="hero-img" style="display:none;"></div>
+    </div>
+  </header>
+
+  <!--
+    Scroll to Top Button: Appears when user scrolls down, lets users quickly return to the top of the page.
+    Controlled by JavaScript in main.js.
+  -->
+  <button id="scroll-top-btn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;background:#b45309;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">↑</button>
+  <main class="main-content" style="padding-top:2rem;padding-bottom:2rem;">
+    <!--
+      Main Content: Contains all about page sections, including Ruth's story, mission, vision, and team.
+      Uses a centered container for layout.
+    -->
+    <!-- Hero Section -->
+    <div class="container" style="max-width:900px;">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <h1 style="font-size:2.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">About Baked by Ruth</h1>
+        <p style="font-size:1.25rem;color:#78350f;max-width:600px;margin:0 auto;">A tribute to our beloved Ruth - a woman whose passion for baking created connections, brought joy, and built a legacy that lives on in every loaf.</p>
+      </div>
+
+      <!--
+        Ruth's Story Section: Shares the founder's background and legacy.
+        Uses a two-column layout with an image and text.
+      -->
+      <section style="margin-bottom:3rem;">
+        <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center;">
+          <div style="flex:1 1 300px;min-width:260px;text-align:center;">
+            <img src="images/WhatsApp Image 2025-08-19 at 17.06.42_06feae40.jpg" alt="Portrait of Ruth in her kitchen, kneading dough with a warm smile" style="border-radius:1rem;box-shadow:0 4px 24px rgba(0,0,0,0.08);width:100%;max-width:350px;">
+          </div>
+          <div style="flex:2 1 350px;min-width:260px;">
+            <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Ruth's Story</h2>
+            <div style="color:#444;font-size:1.08rem;line-height:1.7;">
+              <p>Born and raised in the heart of Limpopo, Ruth developed an ambitious spirit and an unwavering passion for baking that would touch countless lives. Every morning before dawn, she would rise to prepare her famous fat cakes and scones for local factories and schools.</p>
+              <p>On days when school was out, I would join her in the kitchen at sunrise, watching in wonder as she measured ingredients with the precision of love, kneaded dough with patient hands, and greeted each customer like family. Ruth had a gift - she could turn simple ingredients into moments of joy.</p>
+              <p>Baking wasn't just Ruth's profession; it was her way of connecting with people, uplifting spirits, and sharing her dreams. She always envisioned building something lasting, turning her love for baking into a legacy that would outlive her.</p>
+              <p>Though Ruth passed away in July 2025, her spirit lives on in every recipe, every warm greeting, and every moment of joy our baked goods bring to families. Baked by Ruth is more than a bakery - it's the fulfillment of her dream.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission & Vision -->
+      <section style="margin-bottom:3rem;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:100%;">
+          <div style="background:#fff7e6;padding:2rem;border-radius:1rem;">
+            <h3 style="font-size:1.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Our Mission</h3>
+            <p style="color:#444;">To honor Ruth's legacy by creating exceptional baked goods that bring families together, support our community, and spread the warmth and love that Ruth embodied in every recipe she shared.</p>
+          </div>
+          <div style="background:#ffe5e0;padding:2rem;border-radius:1rem;">
+            <h3 style="font-size:1.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Our Vision</h3>
+            <p style="color:#444;">To become the heart of our community's celebrations and daily joys, preserving traditional South African baking while creating new memories for future generations to treasure.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Values -->
+      <section style="margin-bottom:3rem;">
+        <h3 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Our Values</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+          <div style="text-align:center;">
+            <div style="background:#fff7e6;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;font-size:2rem;">❤️</div>
+            <h4 style="font-size:1.2rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Love in Every Bite</h4>
+            <p style="color:#666;">Every product is made with the same care and attention Ruth gave to her family recipes.</p>
+          </div>
+          <div style="text-align:center;">
+            <div style="background:#fff7e6;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;font-size:2rem;">🏘️</div>
+            <h4 style="font-size:1.2rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Community First</h4>
+            <p style="color:#666;">Supporting local suppliers and giving back to the community that shaped Ruth's journey.</p>
+          </div>
+          <div style="text-align:center;">
+            <div style="background:#fff7e6;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem auto;font-size:2rem;">🌾</div>
+            <h4 style="font-size:1.2rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Traditional Quality</h4>
+            <p style="color:#666;">Using premium ingredients and time-honored techniques to ensure authentic flavors and freshness.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section>
+        <h3 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Our Team</h3>
+        <div style="text-align:center;max-width:400px;margin:0 auto;">
+          <img src="images/khanyisa 2.JPG" alt="Khanyisa Shikwambana, founder of Baked by Ruth" style="width:128px;height:128px;border-radius:50%;object-fit:cover;margin-bottom:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <h4 style="font-size:1.2rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Khanyisa Shikwambana</h4>
+          <p style="color:#b45309;font-weight:500;margin-bottom:0.5rem;">Founder & Head Baker</p>
+          <p style="color:#666;">Ruth's loving grandchild, carrying forward her recipes and dreams. Dedicated to preserving traditional baking methods while creating new memories for families across our community.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <h3>Baked by Ruth</h3>
+        <p>Preserving Ruth's legacy through traditional baking with love and care.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: +27 123 456 789<br>Email: hello@bakedbyruth.co.za<br>Open: Mon-Sat 6AM-6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Baked by Ruth. All rights reserved. In loving memory of Ruth.</p>
+    </div>
+  </footer>
+</body>
+</html>

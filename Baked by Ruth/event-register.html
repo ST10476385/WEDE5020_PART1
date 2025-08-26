@@ -1,0 +1,52 @@
+<!--
+  event-register.html
+  Event registration page for Baked by Ruth.
+  Lets users sign up for community events.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata and links to the main stylesheet.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!--
+    Main Content: Contains the event registration form and info.
+    Uses a centered container for layout.
+  -->
+  <main class="main-content">
+    <div class="container" style="max-width:600px;margin:2rem auto;">
+      <h1 style="color:#b45309;font-size:2rem;font-weight:700;margin-bottom:1.5rem;">Register for an Event</h1>
+      <form action="#" method="post" style="background:#fff;padding:2rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:1.25rem;">
+        <!--
+          Event Registration Form: Collects user details and event selection.
+        -->
+        <label for="event" style="font-weight:600;color:#b45309;">Select Event</label>
+        <select id="event" name="event" required style="padding:0.75rem 1rem;border-radius:0.5rem;border:1px solid #e5e7eb;">
+          <option value="">-- Please choose an event --</option>
+          <option value="Ruth's Legacy Bake Sale">Ruth's Legacy Bake Sale</option>
+          <option value="Family Baking Day">Family Baking Day</option>
+          <option value="Young Entrepreneurs Fair">Young Entrepreneurs Fair</option>
+          <option value="Easter Baking Celebration">Easter Baking Celebration</option>
+        </select>
+        <label for="name" style="font-weight:600;color:#b45309;">Full Name</label>
+        <input type="text" id="name" name="name" required style="padding:0.75rem 1rem;border-radius:0.5rem;border:1px solid #e5e7eb;">
+        <label for="email" style="font-weight:600;color:#b45309;">Email Address</label>
+        <input type="email" id="email" name="email" required style="padding:0.75rem 1rem;border-radius:0.5rem;border:1px solid #e5e7eb;">
+        <label for="phone" style="font-weight:600;color:#b45309;">Phone Number</label>
+        <input type="tel" id="phone" name="phone" style="padding:0.75rem 1rem;border-radius:0.5rem;border:1px solid #e5e7eb;">
+        <label for="message" style="font-weight:600;color:#b45309;">Additional Message (optional)</label>
+        <textarea id="message" name="message" rows="3" style="padding:0.75rem 1rem;border-radius:0.5rem;border:1px solid #e5e7eb;"></textarea>
+        <button type="submit" style="background:#16a34a;color:#fff;padding:0.75rem 2rem;border-radius:0.5rem;font-size:1rem;font-weight:600;cursor:pointer;margin-top:1rem;">Submit Registration</button>
+      </form>
+      <p style="margin-top:1.5rem;color:#78350f;text-align:center;">Have questions? <a href="enquiry.html" style="color:#b45309;text-decoration:underline;">Contact us here</a>.</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!--
+  courses.html
+  Baking courses page for Baked by Ruth.
+  Lists available courses, community impact, and registration info.
+  Comments throughout explain the structure and purpose of each section for educational clarity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Head section: Sets up page metadata for SEO, social sharing, and responsive design.
+    Links to the main stylesheet and JavaScript file.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join our baking courses and learn traditional and modern baking skills. Community impact and youth development.">
+  <meta name="keywords" content="Courses, Baking, Skills, Community, Youth, Training, Polokwane, South Africa">
+  <meta name="author" content="Khanyisa Shikwambana">
+  <meta property="og:title" content="Courses | Baked by Ruth">
+  <meta property="og:description" content="Join our baking courses and learn traditional and modern baking skills. Community impact and youth development.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero-placeholder.jpg">
+  <meta property="og:url" content="https://bakedbyruth.co.za/courses.html">
+  <title>Courses | Baked by Ruth</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!--
+    Navigation Bar: Contains site branding, navigation links, hamburger menu for mobile, and dark mode toggle.
+    The nav is styled for both desktop and mobile users.
+  -->
+  <!-- Navigation with hamburger menu and dark mode toggle -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="brand">
+  <img src="images/LOGO.jpg" alt="Baked by Ruth Logo" style="height:48px;width:auto;vertical-align:middle;margin-right:0.75rem;">
+  <h1 style="display:inline;vertical-align:middle;">Baked by Ruth</h1>
+  <span class="subtitle">A Legacy of Love</span>
+      </div>
+      <!-- Hamburger menu button for mobile -->
+      <button id="menu-btn" aria-label="Open navigation menu" style="display:none;background:none;border:none;font-size:2rem;cursor:pointer;">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <!-- Dark mode toggle button -->
+      <button id="dark-toggle" aria-label="Toggle dark mode" style="margin-left:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;">🌙</button>
+    </div>
+  </nav>
+
+  <!--
+    Hero Section: Large orange header introducing the Courses page.
+    Includes a headline, subheading, and brief description.
+  -->
+  <header class="hero">
+    <div class="container hero-flex">
+      <div class="hero-text">
+        <h2>Community Baking Courses</h2>
+        <h3>Learn, Grow & Uplift</h3>
+        <p>Our courses combine traditional techniques with entrepreneurship skills, and every registration helps fund youth development and community upliftment.</p>
+      </div>
+      <div class="hero-img" style="display:none;"></div>
+    </div>
+  </header>
+
+  <!--
+    Scroll to Top Button: Appears when user scrolls down, lets users quickly return to the top of the page.
+    Controlled by JavaScript in main.js.
+  -->
+  <button id="scroll-top-btn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;background:#b45309;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">↑</button>
+  <main class="main-content">
+    <!--
+      Main Content: Contains all course sections, including community impact, course list, and registration info.
+      Uses a centered container for layout.
+    -->
+    <div class="container" style="max-width:1100px;">
+      <div class="text-center" style="margin-bottom:3rem;">
+        <h1 style="font-size:2.5rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Community Baking Courses</h1>
+        <p style="font-size:1.25rem;color:#78350f;max-width:700px;margin:0 auto;">Learn the art of baking while making a difference. Our courses combine traditional techniques with entrepreneurship skills, and every registration helps fund youth development programs and community upliftment initiatives.</p>
+      </div>
+
+      <!--
+        Community Impact Hero Section: Explains how course fees support youth and community programs.
+        Uses a two-column layout with text and an image.
+      -->
+      <section style="margin-bottom:3rem;">
+        <div style="background:linear-gradient(90deg,#fef3c7 0%,#fee2e2 100%);padding:2.5rem 2rem;border-radius:1.25rem;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;">
+            <div>
+              <h2 style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:1rem;">Baking for a Better Tomorrow</h2>
+              <p style="font-size:1.1rem;color:#78350f;margin-bottom:1.5rem;">Ruth always believed that skills and opportunity could change lives. Through our baking courses, we're continuing her mission by teaching valuable skills while using course fees to fund:</p>
+              <ul style="color:#78350f;font-size:1rem;line-height:1.7;margin-bottom:0.5rem;padding-left:1.2em;">
+                <li>🎯 Youth entrepreneurship programs and mentorship</li>
+                <li>🌟 Job placement assistance and business startup support</li>
+                <li>🏘️ Community events that bring families together</li>
+                <li>📚 Educational scholarships and skills development workshops</li>
+              </ul>
+            </div>
+            <div style="text-align:center;">
+              <img src="images/Loraine Pascale - I love her cakes.jpeg"Young people learning baking skills in a warm, community-focused kitchen" style="border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.10);width:100%;max-width:400px;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Course Categories -->
+      <section style="margin-bottom:3rem;">
+        <h2 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2.5rem;">Our Course Offerings</h2>
+        <!-- Beginner Courses -->
+        <div style="margin-bottom:2.5rem;">
+          <h3 style="font-size:1.3rem;font-weight:700;color:#b45309;margin-bottom:1.5rem;">Beginner Courses</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/Easy Homemade French Bread.jpeg" alt="Basic bread making course with hands kneading dough" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Basic Bread Making</h4>
+                <p style="color:#666;margin-bottom:1rem;">Learn the fundamentals of bread making, from mixing and kneading to proofing and baking. Perfect for complete beginners.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 4 weeks (8 sessions)</p>
+                  <p>🕒 Schedule: Saturdays 9AM-12PM</p>
+                  <p>👥 Class size: Max 12 students</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R650 per person</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/069d17eb-5fa5-4b07-92f4-9fdfb3c6f36e.jpeg" alt="Traditional South African baking techniques" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Traditional SA Baking</h4>
+                <p style="color:#666;margin-bottom:1rem;">Master Ruth's signature recipes including fat cakes, koeksisters, milk tart, and other South African favorites.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 3 weeks (6 sessions)</p>
+                  <p>🕒 Schedule: Weekends (Sat & Sun)</p>
+                  <p>👥 Class size: Max 10 students</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R750 per person</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/Brookies Cookies.jpeg" alt="Cookie and biscuit baking basics" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Cookie & Biscuit Basics</h4>
+                <p style="color:#666;margin-bottom:1rem;">Learn to create perfect cookies, biscuits, and small treats. Great for those interested in starting a small home business.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 2 weeks (4 sessions)</p>
+                  <p>🕒 Schedule: Weekday evenings 6PM-9PM</p>
+                  <p>👥 Class size: Max 15 students</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R450 per person</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Intermediate Courses -->
+        <div style="margin-bottom:2.5rem;">
+          <h3 style="font-size:1.3rem;font-weight:700;color:#b45309;margin-bottom:1.5rem;">Intermediate Courses</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/IRWD365 x Octomedia • Dijana Risteska  Event….jpeg" alt="Cake decorating and design workshop" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Cake Decorating & Design</h4>
+                <p style="color:#666;margin-bottom:1rem;">Advanced techniques for creating beautiful celebration cakes, including fondant work, piping, and artistic design principles.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 5 weeks (10 sessions)</p>
+                  <p>🕒 Schedule: Saturdays 1PM-5PM</p>
+                  <p>👥 Class size: Max 8 students</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R1250 per person</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/00c0195a-0584-4439-ae26-0a8a3fb10798.jpeg" alt="Pastry and dessert making techniques" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Pastry & Dessert Mastery</h4>
+                <p style="color:#666;margin-bottom:1rem;">Learn professional pastry techniques including puff pastry, choux pastry, and elegant dessert presentation.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 6 weeks (12 sessions)</p>
+                  <p>🕒 Schedule: Tue & Thu evenings 6PM-9PM</p>
+                  <p>👥 Class size: Max 10 students</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R1450 per person</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/Crusty Chewy French Bread Rolls Artisan Perfection….jpeg" alt="Artisan bread and sourdough techniques" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Artisan Bread & Sourdough</h4>
+                <p style="color:#666;margin-bottom:1rem;">Master the art of artisan bread making, sourdough starters, and specialty breads for commercial or personal use.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 4 weeks (8 sessions)</p>
+                  <p>🕒 Schedule: Sundays 9AM-1PM</p>
+                  <p>👥 Class size: Max 8 students</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R950 per person</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Advanced & Business Courses -->
+        <div style="margin-bottom:2.5rem;">
+          <h3 style="font-size:1.3rem;font-weight:700;color:#b45309;margin-bottom:1.5rem;">Advanced & Business Development</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/A Daily Gathering _ Kitchen Aesthetic _ Baked….jpeg" alt="Professional bakery business workshop" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Start Your Baking Business</h4>
+                <p style="color:#666;margin-bottom:1rem;">Comprehensive course covering baking techniques, business planning, marketing, pricing, food safety, and legal requirements for starting a bakery business.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 8 weeks (16 sessions)</p>
+                  <p>🕒 Schedule: Flexible weekend scheduling</p>
+                  <p>👥 Class size: Max 12 students</p>
+                  <p>📋 Includes: Business plan template, marketing materials, mentorship</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R2800 per person</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+            <div style="background:#fff;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);overflow:hidden;">
+              <img src="images/Welcome to the intersection of nursing and….jpeg" alt="Youth entrepreneurship and skills development" style="width:100%;height:180px;object-fit:cover;">
+              <div style="padding:1.5rem;">
+                <h4 style="font-size:1.1rem;font-weight:600;color:#b45309;margin-bottom:0.5rem;">Youth Entrepreneurship Program</h4>
+                <p style="color:#666;margin-bottom:1rem;">Special program for young people (16-25 years) combining baking skills with entrepreneurship training, life skills, and job placement assistance.</p>
+                <div style="font-size:0.98rem;color:#78350f;margin-bottom:1rem;">
+                  <p>📅 Duration: 12 weeks (24 sessions)</p>
+                  <p>🕒 Schedule: Mon-Wed-Fri mornings</p>
+                  <p>👥 Class size: Max 15 students</p>
+                  <p>🎯 Includes: Internship placement, business mentoring</p>
+                </div>
+                <p style="color:#b45309;font-weight:600;">R1200 per person</p>
+                <p style="color:#16a34a;font-size:0.98rem;font-weight:600;">Scholarship opportunities available</p>
+                <button class="enroll-btn" style="background:#78350f;color:#fff;border:none;padding:0.5rem 1rem;border-radius:0.5rem;cursor:pointer;margin-top:0.5rem;" onclick="window.location.href='enroll.html'">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Impact Stats -->
+      <section style="margin-bottom:3rem;">
+        <div style="background:#fef3c7;padding:2rem 1.5rem;border-radius:1rem;">
+          <h3 style="font-size:1.5rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2rem;">Our Community Impact</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:center;">
+            <div>
+              <div style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">150+</div>
+              <p style="color:#78350f;">Students Trained</p>
+            </div>
+            <div>
+              <div style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">45</div>
+              <p style="color:#78350f;">Small Businesses Started</p>
+            </div>
+            <div>
+              <div style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">80</div>
+              <p style="color:#78350f;">Youth Employed</p>
+            </div>
+            <div>
+              <div style="font-size:2rem;font-weight:700;color:#b45309;margin-bottom:0.5rem;">R185K</div>
+              <p style="color:#78350f;">Raised for Community Programs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How to Enroll -->
+      <section style="margin-bottom:3rem;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;">
+          <div style="background:#fff;padding:2rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="font-size:1.3rem;font-weight:700;color:#b45309;margin-bottom:1.5rem;">What's Included</h3>
+            <ul style="color:#78350f;font-size:1rem;line-height:1.7;margin-bottom:0.5rem;padding-left:1.2em;">
+              <li>✓ All ingredients and equipment provided</li>
+              <li>✓ Take-home samples from each session</li>
+              <li>✓ Comprehensive recipe booklets</li>
+              <li>✓ Certificate of completion</li>
+              <li>✓ Ongoing support and advice</li>
+              <li>✓ Access to alumni network</li>
+              <li>✓ Small class sizes for personalized attention</li>
+            </ul>
+          </div>
+          <div style="background:#fff;padding:2rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <h3 style="font-size:1.3rem;font-weight:700;color:#b45309;margin-bottom:1.5rem;">How to Enroll</h3>
+            <ol style="color:#78350f;font-size:1rem;line-height:1.7;margin-bottom:0.5rem;padding-left:1.2em;">
+              <li>Choose Your Course: Browse our course offerings and select the one that fits your schedule and skill level.</li>
+              <li>Submit Application: Fill out our simple enrollment form with your contact details and course preference.</li>
+              <li>Confirmation & Payment: We'll confirm your spot and provide payment details. Payment plans available for youth programs.</li>
+              <li>Start Learning: Join your class and begin your baking journey while making a difference in the community.</li>
+            </ol>
+            <a href="enroll.html" class="btn btn-primary" style="display:block;width:100%;margin-top:1.5rem;">Enroll Now</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section>
+        <h3 style="font-size:2rem;font-weight:700;color:#b45309;text-align:center;margin-bottom:2.5rem;">Student Success Stories</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+          <div style="background:#fff;padding:1.5rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;margin-bottom:1rem;">
+              <img src="images/775ebfb0-f453-43d8-aa41-221381e6835f.jpeg" alt="Student testimonial photo" style="width:48px;height:48px;border-radius:50%;margin-right:1rem;object-fit:cover;">
+              <div>
+                <h4 style="font-weight:600;color:#b45309;margin-bottom:0.2rem;">Nomsa Mthembu</h4>
+                <p style="font-size:0.98rem;color:#78350f;">Traditional SA Baking Graduate</p>
+              </div>
+            </div>
+            <p style="color:#78350f;font-style:italic;">"The course changed my life! I now run my own small bakery from home and support my family. The skills and confidence I gained here were priceless."</p>
+          </div>
+          <div style="background:#fff;padding:1.5rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;margin-bottom:1rem;">
+              <img src="images/e93ca426-fc7e-409c-8c98-6c16009d287e.jpeg" alt="Student testimonial photo" style="width:48px;height:48px;border-radius:50%;margin-right:1rem;object-fit:cover;">
+              <div>
+                <h4 style="font-weight:600;color:#b45309;margin-bottom:0.2rem;">Thabo Molefe</h4>
+                <p style="font-size:0.98rem;color:#78350f;">Youth Entrepreneurship Program</p>
+              </div>
+            </div>
+            <p style="color:#78350f;font-style:italic;">"From being on the streets to owning my own catering business - this program gave me hope and practical skills. Now I'm employing 3 other young people."</p>
+          </div>
+          <div style="background:#fff;padding:1.5rem;border-radius:1rem;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;margin-bottom:1rem;">
+              <img src="images/Photographer Brock Elbank has sought out….jpeg" alt="Student testimonial photo" style="width:48px;height:48px;border-radius:50%;margin-right:1rem;object-fit:cover;">
+              <div>
+                <h4 style="font-weight:600;color:#b45309;margin-bottom:0.2rem;">Sarah van der Merwe</h4>
+                <p style="font-size:0.98rem;color:#78350f;">Cake Decorating Graduate</p>
+              </div>
+            </div>
+            <p style="color:#78350f;font-style:italic;">"I came to learn a hobby and ended up starting a side business! The instructors are amazing and the community impact makes it even more meaningful."</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <h3>Baked by Ruth</h3>
+        <p>Preserving Ruth's legacy through traditional baking with love and care.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: +27 123 456 789<br>Email: hello@bakedbyruth.co.za<br>Open: Mon-Sat 6AM-6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Baked by Ruth. All rights reserved. In loving memory of Ruth.</p>
+    </div>
+  </footer>
+</body>
+</html>
